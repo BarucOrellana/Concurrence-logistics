@@ -5,7 +5,7 @@ public class Driver implements Runnable {
     public int idDriver;
     public Yard yard;
     public Truck truck;
-
+    public int time;
     public Driver(int idDriver, Yard yard) {
         this.idDriver = idDriver;
         this.yard = yard;
@@ -20,14 +20,16 @@ public class Driver implements Runnable {
             truck = queue.take();
             truck.drive();
             if (truck.isHeld()) {
+                time = truck.getTime();
                 System.out.println("El conductor " + idDriver + " esta manejando la unidad " + truck.idTruck);
-                Thread.sleep(5000);
+                Thread.sleep(time);
                 queue.put(truck);
             }
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } finally {
             System.out.println("El conductor " + idDriver + " ha dejado de conducir la unidad "+ truck.idTruck);
+            System.out.println("El conductor " + idDriver + " condujo por " + time/1000 + "s");
             truck.unlock();
             rest();
             semaphore.release();
