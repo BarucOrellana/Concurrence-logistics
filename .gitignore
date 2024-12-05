@@ -1,0 +1,41 @@
+# Directorio de configuración de IntelliJ IDEA
+.idea/
+
+# Archivos de configuración de proyecto
+*.iml
+*.ipr
+*.iws
+
+# Archivos de configuración del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Carpetas de compilación y binarios
+out/
+target/
+
+# Configuración de compilación específica
+*.log
+*.class
+
+# Archivos de dependencias de Maven o Gradle
+.mvn/
+.gradle/
+build/
+
+# Configuración de entornos virtuales
+.vscode/
+env/
+.venv/
+
+# Configuración de herramientas específicas
+*.swp
+*.swo
+
+# Otras configuraciones temporales
+*.tmp
+*.bak
+*.old
+
+# Configuración de IntelliJ para análisis o indexación
+*.idea/
